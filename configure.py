@@ -131,7 +131,7 @@ def _setGCCVersionedFlags(FLAGS, MAJOR_VERSION, MINOR_VERSION, current_cpu, clan
             FLAGS += "-Wno-padded -Wno-global-constructors -Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-exit-time-destructors -Wno-format-nonliteral -Wno-unused-private-field "
             FLAGS += "-Wmissing-field-initializers -Wno-array-bounds -Wstrict-overflow=0 -funit-at-a-time  "
         else: # gcc 4.5 or later
-            FLAGS += "-Werror -Wempty-body -Wno-logical-op -Wmissing-field-initializers -Wstrict-aliasing=3 -Wno-array-bounds -Wno-clobbered -Wstrict-overflow=0 -funit-at-a-time  "
+            FLAGS += "-Wempty-body -Wno-logical-op -Wmissing-field-initializers -Wstrict-aliasing=3 -Wno-array-bounds -Wno-clobbered -Wstrict-overflow=0 -funit-at-a-time -fpermissive -Wno-narrowing "
             if (MAJOR_VERSION == 4 and MINOR_VERSION == 6): # 4.6
                 FLAGS += "-Wno-psabi -Wno-unused-variable -Wno-unused-but-set-variable "
 
